@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Cachorros
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let cachorro of cachorros">
+    <ion-card-content>
+      <ion-item>
+      <ion-icon [name]="cachorro.sexo" [ngClass]="cachorro.sexo" item-left large></ion-icon>
+      <ion-card-title>
+        {{cachorro.nome}}
+        </ion-card-title>
+      </ion-item>
+      <p>
+        {{cachorro.descricao}}
+      </p>
+    </ion-card-content>
+    <img [src]="cachorro.imagem"/>
+  </ion-card>
+</ion-content>
