@@ -18,7 +18,4 @@ export class CachorrosPage {
   ];
   constructor(public navCtrl: NavController) {}
 
-adotar(){
-this.navCtrl.push("AdocaoPage")
-}
 }
