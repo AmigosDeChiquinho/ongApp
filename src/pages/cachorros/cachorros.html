@@ -15,10 +15,18 @@
         {{cachorro.nome}}
         </ion-card-title>
       </ion-item>
+    </ion-card-content>
+    <img [src]="cachorro.imagem"/>
       <p>
         {{cachorro.descricao}}
       </p>
-    </ion-card-content>
-    <img [src]="cachorro.imagem"/>
+    <ion-row no-padding>
+      <ion-col>
+        <button ion-button clear small color="danger" icon-left (click)="adotar()">
+          <ion-icon name='heart'></ion-icon>
+          Adotar
+        </button>
+      </ion-col>
+    </ion-row>
   </ion-card>
 </ion-content>
