@@ -1,30 +1,31 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
 @IonicPage()
 @Component({
   selector: 'page-cachorro',
   templateUrl: 'cachorro.html',
 })
 export class CachorroPage {
- slides = [
+
+@ViewChild(Slides) slides: Slides;
+
+ slide = [
     {
-      image: "assets/img/1.jpg",
+      image: "http://www.dogster.com/wp-content/uploads/2017/02/visine-for-dogs.jpg",
     },
     {
-      image: "assets/img/2.jpg",
+      image: "https://statcdn.fandango.com/MPX/image/NBCU_Fandango/457/1019/ADogsPurpose_Clip_ChaseABall.jpg",
     },
     {
-      image: "assets/img/3.jpg",
+      image: "http://nqki340a6g43eofbpz6nu7kk-wpengine.netdna-ssl.com/wp-content/uploads/2016/07/Gemma-Stafford-Homemade-Ice-Cream-for-Dogs-Select-v.3-1024x576.jpg",
     }
   ];
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CachorroPage');
-  }
   
+
+
   adotar(){
 	this.navCtrl.push("AdocaoPage")
 	}

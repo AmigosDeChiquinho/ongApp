@@ -16,9 +16,9 @@
 <ion-content padding>
 
 	 <ion-icon name="images" item-left ></ion-icon> Fotos
-	<ion-slides pager [autoplay]="4000" [effect]="'cube'" zoom>
-	    <ion-slide *ngFor="let slide of slides" >
-	    	<img [src]="slide.image" class="slide-image"/>
+	<ion-slides effect="slide" loop="true" pager>
+	    <ion-slide *ngFor="let s of slide" >
+	    	<img [src]="s.image" class="slide-image"/>
 	    </ion-slide>
 	</ion-slides>
  <ion-icon name="paw" item-left ></ion-icon> Dados do Animal
@@ -62,7 +62,7 @@
 	</ion-list>
     <ion-row no-padding>
       <ion-col>
-        <button ion-button clear small color="danger" icon-left (click)="adotar()">
+        <button ion-button clear color="danger" icon-left (click)="adotar()">
           <ion-icon name='heart'></ion-icon>
           Adotar
         </button>

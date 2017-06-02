@@ -7,80 +7,85 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-list>
-      <ion-item-group>
-        <ion-icon name="person" item-left ></ion-icon> Dados Pessoais
-        <ion-item>
-          <ion-label floating>Nome Completo</ion-label>
-          <ion-input type="text" value=""></ion-input>
-        </ion-item>
+<form [formGroup]="dados" (ngSubmit)="adotar()"> 
+  <ion-list>
+    <ion-list-header>
+    <ion-icon name="person" item-left ></ion-icon>
+      Dados Pessoais
+    </ion-list-header>
+    
+    <ion-item>
+      <ion-label floating>Nome Completo</ion-label>
+      <ion-input type="text" formControlName="nome"></ion-input>
+    </ion-item>
 
-        <ion-item>
-          <ion-label floating>CPF</ion-label>
-          <ion-input type="text" value=""></ion-input>
-        </ion-item>
+    <ion-item>
+      <ion-label floating>CPF</ion-label>
+      <ion-input type="text" formControlName="cpf"></ion-input>
+    </ion-item>
 
-        <ion-item>
-          <ion-label floating>Data de Nascimento</ion-label>
-          <ion-input type="text" value=""></ion-input>
-        </ion-item>
+    <ion-item>
+      <ion-label floating>Data de Nascimento</ion-label>
+      <ion-input type="date" formControlName="datanascimento"></ion-input>
+    </ion-item>
 
-        <ion-item>
-          <ion-label floating>Celular</ion-label>
-          <ion-input type="text" value=""></ion-input>
-        </ion-item>
+    <ion-item>
+      <ion-label floating>Celular</ion-label>
+      <ion-input type="text" formControlName="celular"></ion-input>
+    </ion-item>
 
-        <ion-item>
-          <ion-label floating>Telefone</ion-label>
-          <ion-input type="text" value=""></ion-input>
-        </ion-item>
-      </ion-item-group>
-      <br/>
-      <ion-item-group>
-        <ion-icon name="home" item-left></ion-icon> Endereço
-        <ion-item>
-          <ion-label floating>Logradouro</ion-label>
-          <ion-input type="text" value=""></ion-input>
-        </ion-item>
+    <ion-item>
+      <ion-label floating>Telefone</ion-label>
+      <ion-input type="text" formControlName="telefone"></ion-input>
+    </ion-item>
 
-        <ion-item>
-          <ion-label floating>Numero</ion-label>
-          <ion-input type="text" value=""></ion-input>
-        </ion-item>
+  </ion-list>
+  <br>
+  <ion-list>
+    <ion-list-header>
+      <ion-icon name="home" item-left ></ion-icon>
+        Endereço
+    </ion-list-header>
+    <ion-item>
+      <ion-label floating>Logradouro</ion-label>
+      <ion-input type="text" formControlName="logradouro"></ion-input>
+    </ion-item>
 
-        <ion-item>
-          <ion-label floating>Bairro</ion-label>
-          <ion-input type="text" value=""></ion-input>
-        </ion-item>
+    <ion-item>
+      <ion-label floating>Numero</ion-label>
+      <ion-input type="text" formControlName="numero"></ion-input>
+    </ion-item>
 
-        <ion-item>
-          <ion-label floating>Complemento</ion-label>
-          <ion-input type="text" value=""></ion-input>
-        </ion-item>
+    <ion-item>
+      <ion-label floating>Bairro</ion-label>
+      <ion-input type="text" formControlName="bairro"></ion-input>
+    </ion-item>
 
-        <ion-item>
-          <ion-label floating>Cidade</ion-label>
-          <ion-input type="text" value=""></ion-input>
-        </ion-item>
+    <ion-item>
+      <ion-label floating>Complemento</ion-label>
+      <ion-input type="text" formControlName="complemento"></ion-input>
+    </ion-item>
 
-        <ion-item>
-          <ion-label floating>Estado</ion-label>
-          <ion-input type="text" value=""></ion-input>
-        </ion-item>
+    <ion-item>
+      <ion-label floating>Cidade</ion-label>
+      <ion-input type="text" formControlName="cidade"></ion-input>
+    </ion-item>
 
-        <ion-item>
-          <ion-label floating>CEP</ion-label>
-          <ion-input type="text" value=""></ion-input>
-        </ion-item>
-      </ion-item-group>
-    </ion-list>
+    <ion-item>
+      <ion-label floating>Estado</ion-label>
+      <ion-input type="text" formControlName="estado"></ion-input>
+    </ion-item>
 
-    <ion-row no-padding>
-      <ion-col>
-        <button ion-button clear small color="danger" icon-left>
-          <ion-icon name='heart'></ion-icon>
-          Adotar
-        </button>
-      </ion-col>
-    </ion-row>
+    <ion-item>
+      <ion-label floating>CEP</ion-label>
+      <ion-input type="text" formControlName="cep"></ion-input>
+    </ion-item>
+  </ion-list>
+    <div padding>
+      <button ion-button block icon-left type="submit" [disabled]="!dados.valid">
+        <ion-icon name='document'></ion-icon>
+        Enviar Formulário
+      </button>
+    </div>
+</form>
 </ion-content>
