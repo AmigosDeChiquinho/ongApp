@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>
       Caixas de doação
     </ion-title>
@@ -8,14 +8,14 @@
 
 <ion-content padding>
 <ion-fab bottom right>
-    <button ion-fab mini (click)="solicitar()"><ion-icon name="add"></ion-icon></button>
+    <button ion-fab (click)="solicitar()" color="secondary"><ion-icon name="add"></ion-icon></button>
 </ion-fab>
 <ion-list>
-  <ion-list-header>
+  <ion-list-header text-wrap>
     Você pode doar para a ONG aqui:
   </ion-list-header>
-  <ion-item *ngFor="let item of caixas">
-    <ion-icon item-left name="cash" color="secondary"></ion-icon>
+  <ion-item *ngFor="let item of caixas" text-wrap>
+    <ion-icon item-left name="pin" color="secondary"></ion-icon>
     <h2>{{item.nome}}</h2>
     <p>{{item.endereco}}</p>
   </ion-item>

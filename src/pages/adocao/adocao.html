@@ -1,6 +1,6 @@
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>adoção</ion-title>
   </ion-navbar>
 
@@ -16,12 +16,12 @@
     
     <ion-item>
       <ion-label floating>Nome Completo</ion-label>
-      <ion-input type="text" formControlName="nome"></ion-input>
+      <ion-input type="text" formControlName="nome" maxlength="200"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>CPF</ion-label>
-      <ion-input type="text" formControlName="cpf"></ion-input>
+      <ion-input type="text" formControlName="cpf" maxlength="11" minlength="11"></ion-input>
     </ion-item>
 
     <ion-item>
@@ -31,12 +31,12 @@
 
     <ion-item>
       <ion-label floating>Celular</ion-label>
-      <ion-input type="text" formControlName="celular"></ion-input>
+      <ion-input type="text" formControlName="celular" maxlength="11" minlength="11"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Telefone</ion-label>
-      <ion-input type="text" formControlName="telefone"></ion-input>
+      <ion-input type="text" formControlName="telefone" maxlength="10" minlength="10"></ion-input>
     </ion-item>
 
   </ion-list>
@@ -48,37 +48,37 @@
     </ion-list-header>
     <ion-item>
       <ion-label floating>Logradouro</ion-label>
-      <ion-input type="text" formControlName="logradouro"></ion-input>
+      <ion-input type="text" formControlName="logradouro" maxlength="100"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Numero</ion-label>
-      <ion-input type="text" formControlName="numero"></ion-input>
+      <ion-input type="text" formControlName="numero" maxlength="10"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Bairro</ion-label>
-      <ion-input type="text" formControlName="bairro"></ion-input>
+      <ion-input type="text" formControlName="bairro" maxlength="60"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Complemento</ion-label>
-      <ion-input type="text" formControlName="complemento"></ion-input>
+      <ion-input type="text" formControlName="complemento" maxlength="45"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Cidade</ion-label>
-      <ion-input type="text" formControlName="cidade"></ion-input>
+      <ion-input type="text" formControlName="cidade" maxlength="100"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>Estado</ion-label>
-      <ion-input type="text" formControlName="estado"></ion-input>
+      <ion-input type="text" formControlName="estado" maxlength="100"></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label floating>CEP</ion-label>
-      <ion-input type="text" formControlName="cep"></ion-input>
+      <ion-input type="text" formControlName="cep" maxlength="9"></ion-input>
     </ion-item>
   </ion-list>
     <div padding>

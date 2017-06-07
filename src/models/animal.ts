@@ -1,4 +1,4 @@
-export class Cachorro {
+export class Animal {
 	constructor( public nome:string, 
 		public sexo:string, public pelagem:string, 
 		public porte: string, public pelo:string, 

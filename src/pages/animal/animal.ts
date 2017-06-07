@@ -2,10 +2,10 @@ import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
 @IonicPage()
 @Component({
-  selector: 'page-cachorro',
-  templateUrl: 'cachorro.html',
+  selector: 'page-animal',
+  templateUrl: 'animal.html',
 })
-export class CachorroPage {
+export class AnimalPage {
 
 @ViewChild(Slides) slides: Slides;
 

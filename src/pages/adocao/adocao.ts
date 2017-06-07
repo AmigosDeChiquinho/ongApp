@@ -21,10 +21,10 @@ export class AdocaoPage {
   	private formBuilder: FormBuilder) {
   	this.dados = this.formBuilder.group({
   		nome: ['',[Validators.required,Validators.maxLength(200)]],
-  		cpf: ['',[Validators.required, Validators.maxLength(11),Validators.minLength(11)]],
+  		cpf: ['',[Validators.required, Validators.maxLength(11),Validators.minLength(11), Validators.pattern("[0-9]\\d+")]],
   		datanascimento: ['',Validators.required],
-  		celular: ['', [Validators.required, Validators.maxLength(11), Validators.minLength(11)]],
-  		telefone: ['', [Validators.required, Validators.maxLength(10), Validators.minLength(10)]],
+  		celular: ['', [Validators.required, Validators.maxLength(11), Validators.minLength(11), Validators.pattern("[0-9]\\d+")]],
+  		telefone: ['', [Validators.required, Validators.maxLength(10), Validators.minLength(10), Validators.pattern("[0-9]\\d+")]],
   		logradouro: ['', [Validators.required, Validators.maxLength(100)]],
   		numero: ['', [Validators.required, Validators.maxLength(10)]],
   		bairro: ['', [Validators.required, Validators.maxLength(60)]],
