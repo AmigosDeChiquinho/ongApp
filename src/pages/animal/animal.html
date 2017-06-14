@@ -9,16 +9,15 @@
   <ion-navbar color="primary">
     <ion-title>animal</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding>
 <ion-fab bottom right>
-    <button ion-fab  color="secondary"><ion-icon name="arrow-dropup"></ion-icon></button>
+    <button ion-fab  color="danger"><ion-icon name="heart"></ion-icon></button>
     <ion-fab-list side="top">
-	    <button ion-fab color="danger" (click)="adotar()">
-	      <ion-icon name="heart"></ion-icon>
+	    <button ion-fab (click)="adotar()">
+	      <ion-icon name="home"></ion-icon>
 	      <ion-label>adotar</ion-label>
 	    </button>
 	    <button ion-fab disabled>
