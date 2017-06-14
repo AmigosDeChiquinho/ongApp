@@ -7,26 +7,17 @@
 </ion-header>
 
 <ion-content padding>
-<form [formGroup]="dados" (ngSubmit)="adotar()"> 
+<form [formGroup]="dados" (ngSubmit)="adotar()">
   <ion-list>
     <ion-list-header>
     <ion-icon name="person" item-left ></ion-icon>
       Dados Pessoais
     </ion-list-header>
-    
+    <ion-item>
+
     <ion-item>
       <ion-label floating>Nome Completo</ion-label>
       <ion-input type="text" formControlName="nome" maxlength="200"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label floating>CPF</ion-label>
-      <ion-input type="text" formControlName="cpf" maxlength="11" minlength="11"></ion-input>
-    </ion-item>
-
-    <ion-item>
-      <ion-label floating>Data de Nascimento</ion-label>
-      <ion-input type="date" formControlName="datanascimento"></ion-input>
     </ion-item>
 
     <ion-item>
@@ -34,7 +25,6 @@
       <ion-input type="text" formControlName="celular" maxlength="11" minlength="11"></ion-input>
     </ion-item>
 
-    <ion-item>
       <ion-label floating>Telefone</ion-label>
       <ion-input type="text" formControlName="telefone" maxlength="10" minlength="10"></ion-input>
     </ion-item>

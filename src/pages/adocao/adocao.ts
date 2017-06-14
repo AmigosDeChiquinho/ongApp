@@ -17,12 +17,10 @@ export class AdocaoPage {
 
 	private dados: FormGroup;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, 
+  constructor(public navCtrl: NavController, public navParams: NavParams,
   	private formBuilder: FormBuilder) {
   	this.dados = this.formBuilder.group({
   		nome: ['',[Validators.required,Validators.maxLength(200)]],
-  		cpf: ['',[Validators.required, Validators.maxLength(11),Validators.minLength(11), Validators.pattern("[0-9]\\d+")]],
-  		datanascimento: ['',Validators.required],
   		celular: ['', [Validators.required, Validators.maxLength(11), Validators.minLength(11), Validators.pattern("[0-9]\\d+")]],
   		telefone: ['', [Validators.required, Validators.maxLength(10), Validators.minLength(10), Validators.pattern("[0-9]\\d+")]],
   		logradouro: ['', [Validators.required, Validators.maxLength(100)]],
