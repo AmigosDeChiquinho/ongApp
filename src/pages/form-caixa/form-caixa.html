@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>Solicitar Caixa de adoção</ion-title>
   </ion-navbar>
 
@@ -14,18 +14,28 @@
 
 
 <ion-content padding>
+<form [formGroup]="dados" (ngSubmit)="solicitar()">
 <ion-list>
 	<ion-item>
-		<ion-label floating>Nome do estabelecimento</ion-label>
-		<ion-input type="text" [(ngModel)]="caixa.nome"></ion-input>
+		<ion-label floating>Nome da Empresa</ion-label>
+		<ion-input type="text" formControlName="empresa" maxLength="200"></ion-input>
+	</ion-item>
+
+  <ion-item>
+		<ion-label floating>Nome do Responsável</ion-label>
+		<ion-input type="text" formControlName="responsavel" maxLength="200"></ion-input>
 	</ion-item>
 
 	<ion-item>
-	<ion-label floating>Endereço</ion-label>
-	<ion-input type="text" [(ngModel)]="caixa.endereco"></ion-input>
+	<ion-label floating>Contato</ion-label>
+	<ion-input type="tel" formControlName="contato" maxLength="11" minLength="9"></ion-input>
 	</ion-item>
 </ion-list>
 <div padding>
-<button ion-button block (click)="solicitar()">Solicitar</button>
+  <button ion-button block icon-left type="submit" [disabled]="!dados.valid">
+    <ion-icon name='box'></ion-icon>
+    Solicitar
+  </button>
 </div>
+</form>
 </ion-content>

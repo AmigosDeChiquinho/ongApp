@@ -1,21 +1,33 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>Home</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
- <img src="assets/img/banner.jpg">
-  <h2>Bem vindo ao nosso aplicativo</h2>
-  <p>
-    A ONG Amigos de Chiquinho, apesar das dificuldades financeiras,
-     vem ao longo desses anos proporcionando uma vida digna a centenas de animais. 
-  </p>
-  <p>
-    Os poucos voluntários, são incansáveis, e tentam driblar os problemas com muita persistência e amor à causa.
-  </p>
-  <p>
-    O nosso desejo é que essa corrente do bem, em prol dos animais, cresça e se fortifique, para que um dia, não vejamos mais animais sofrendo nas ruas das cidades. Juntos somos muito fortes!!!
-  </p>
+<ion-slides effect="slide" loop="true" pager>
+    <ion-slide>
+      <h2 ion-text color="light">Bem vindo ao nosso aplicativo</h2>
+      <img src="assets/img/banner.jpg">
+      <button ion-button clear icon-only color="facebook">
+        <ion-icon name="logo-facebook"></ion-icon>
+      </button>
+      <button ion-button clear icon-only color="twitter">
+        <ion-icon name="logo-twitter"></ion-icon>
+      </button>
+    </ion-slide>
+    <ion-slide>
+    <ion-icon color="light" name="paw"></ion-icon>
+      <p ion-text text-wrap color="light">
+      A ONG Amigos de Chiquinho, apesar das dificuldades financeiras, 
+      vem ao longo desses anos proporcionando uma vida digna a centenas de animais.
+      </p>
+      <p ion-text text-wrap color="light">
+      Os poucos voluntários, são incansáveis, e tentam driblar os problemas com muita persistência e amor à causa. 
+      O nosso desejo é que essa corrente do bem, em prol dos animais, cresça e se fortifique, para que um dia, não vejamos mais animais sofrendo nas ruas das cidades. Juntos somos muito fortes!!!
+      </p>  
+    </ion-slide>
+</ion-slides>
+  
 </ion-content>
 

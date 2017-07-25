@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CaixaProvider } from '../../providers/caixa/caixa';
 import { CaixaDoacao } from '../../models/caixaDoacao';
 import { ToastController } from 'ionic-angular';
+import {Validators, FormBuilder, FormGroup } from '@angular/forms';
 
 
 /**
@@ -18,15 +19,22 @@ import { ToastController } from 'ionic-angular';
 })
 export class FormCaixaPage {
 
+  private dados: FormGroup;
+
 	caixa:CaixaDoacao = new CaixaDoacao("","");
   constructor(public navCtrl: NavController, public navParams: NavParams,
-  	public cxProvider: CaixaProvider, public toastCtrl: ToastController) {
+  	public cxProvider: CaixaProvider, public toastCtrl: ToastController,
+    public formBuilder: FormBuilder) {
+      this.dados = this.formBuilder.group({
+    		empresa: ['',[Validators.required,Validators.maxLength(200)]],
+        responsavel: ['',[Validators.required,Validators.maxLength(200)]],
+    		contato: ['', [Validators.required, Validators.maxLength(11), Validators.minLength(8), Validators.pattern("[0-9]\\d+")]],
+    	})
   }
 
   solicitar(){
   	let message = "default";
-  	if(this.caixa.nome.trim() == "" || 
-  		this.caixa.endereco.trim() == ""){
+  	if(!this.dados.valid){
   		message = "Insira todos os campos";
   	}else{
   		this.cxProvider.solicitar(this.caixa).subscribe()
@@ -38,9 +46,10 @@ export class FormCaixaPage {
           position: "top"
     });
     toast.present()
-    this.caixa.nome=""
-    this.caixa.endereco=""
+    this.dados['empresa'].value = ''
+    this.dados['responsavel'].value = ''
+    this.dados['contato'].value = ''
   }
-  
+
 
 }
