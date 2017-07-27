@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-navbar color="primary" no-border-bottom>
+    <ion-title>
+      Animais
+    </ion-title>
+  </ion-navbar>
+  <ion-toolbar no-border-top color="primary">
+    <ion-segment [(ngModel)]="especie" color="light">
+      <ion-segment-button value="cachorros">
+        Cachorros
+      </ion-segment-button>
+      <ion-segment-button value="gatos">
+        Gatos
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let t of teste | async">
+    {{t | json}}
+  </div>
+  <div [ngSwitch]="especie">
+    <ion-list *ngSwitchCase="'cachorros'">
+      <ion-item *ngFor="let animal of animais">
+        <ion-card>
+          <ion-card-content>
+            <ion-item>
+            <ion-icon [name]="animal.sexo" [ngClass]="animal.sexo" item-left large></ion-icon>
+            <ion-card-title text-wrap>
+              {{animal.nome}}
+              </ion-card-title>
+            </ion-item>
+          </ion-card-content>
+          <virtual-ion-img [src]="animal.imagem"></virtual-ion-img>
+          <ion-card-content>
+            <p>
+              {{animal.descricao}}
+            </p>
+          </ion-card-content>
+          <ion-row no-padding>
+            <ion-col>
+              <button ion-button clear small color="danger" icon-left (click)="adotar()">
+                <ion-icon name='information-circle'></ion-icon>
+                Detalhes
+              </button>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'gatos'">
+      <ion-item *ngFor="let animal of animais">
+        <ion-card>
+          <ion-card-content>
+            <ion-item>
+            <ion-icon [name]="animal.sexo" [ngClass]="animal.sexo" item-left large></ion-icon>
+            <ion-card-title text-wrap>
+              {{animal.nome}}
+              </ion-card-title>
+            </ion-item>
+          </ion-card-content>
+          <virtual-ion-img [src]="animal.imagem"></virtual-ion-img>
+          <ion-card-content>
+            <p>
+              {{animal.descricao}}
+            </p>
+          </ion-card-content>
+          <ion-row no-padding>
+            <ion-col>
+              <button ion-button clear small color="danger" icon-left (click)="adotar()">
+                <ion-icon name='information-circle'></ion-icon>
+                Detalhes
+              </button>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

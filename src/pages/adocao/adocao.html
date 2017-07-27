@@ -1,0 +1,81 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>adoção</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+<form [formGroup]="dados" (ngSubmit)="adotar()">
+  <ion-list>
+    <ion-list-header>
+    <ion-icon name="person" item-left ></ion-icon>
+      Dados Pessoais
+    </ion-list-header>
+    <ion-item>
+
+    <ion-item>
+      <ion-label floating>Nome Completo</ion-label>
+      <ion-input type="text" formControlName="nome" maxlength="200"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Celular</ion-label>
+      <ion-input type="text" formControlName="celular" maxlength="11" minlength="11"></ion-input>
+    </ion-item>
+
+      <ion-label floating>Telefone</ion-label>
+      <ion-input type="text" formControlName="telefone" maxlength="10" minlength="10"></ion-input>
+    </ion-item>
+
+  </ion-list>
+  <br>
+  <ion-list>
+    <ion-list-header>
+      <ion-icon name="home" item-left ></ion-icon>
+        Endereço
+    </ion-list-header>
+    <ion-item>
+      <ion-label floating>Logradouro</ion-label>
+      <ion-input type="text" formControlName="logradouro" maxlength="100"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Numero</ion-label>
+      <ion-input type="text" formControlName="numero" maxlength="10"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Bairro</ion-label>
+      <ion-input type="text" formControlName="bairro" maxlength="60"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Complemento</ion-label>
+      <ion-input type="text" formControlName="complemento" maxlength="45"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Cidade</ion-label>
+      <ion-input type="text" formControlName="cidade" maxlength="100"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Estado</ion-label>
+      <ion-input type="text" formControlName="estado" maxlength="100"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>CEP</ion-label>
+      <ion-input type="text" formControlName="cep" maxlength="9"></ion-input>
+    </ion-item>
+  </ion-list>
+    <div padding>
+      <button ion-button block icon-left type="submit" [disabled]="!dados.valid">
+        <ion-icon name='document'></ion-icon>
+        Enviar Formulário
+      </button>
+    </div>
+</form>
+</ion-content>

@@ -1,8 +1,12 @@
-page-cachorros {
+page-animais {
 	.male{
 		color:#2196f3 !important;
 	}
 	.female{
 		color:#e91e63 !important;
+	}
+	ion-card img{
+		width: 100%;
+		height: 240px;
 	}
 }

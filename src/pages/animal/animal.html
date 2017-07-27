@@ -1,0 +1,83 @@
+<!--
+  Generated template for the CachorroPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>animal</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+<ion-fab bottom right *ngIf="this.auth.isAuthenticated()">
+    <button ion-fab  color="danger"><ion-icon name="heart"></ion-icon></button>
+    <ion-fab-list side="top">
+	    <button ion-fab (click)="adotar()">
+	      <ion-icon name="home"></ion-icon>
+	      <ion-label>adotar</ion-label>
+	    </button>
+	    <button ion-fab disabled>
+	      <ion-icon name="bowtie"></ion-icon>
+	      <ion-label>apadrinhar (breve)</ion-label>
+	    </button>
+  	</ion-fab-list>
+</ion-fab>
+
+ <ion-icon name="images" item-left ></ion-icon> Fotos
+<ion-slides effect="slide" loop="true" pager>
+    <ion-slide *ngFor="let s of slide" >
+    	<img [src]="s.image" class="slide-image"/>
+    </ion-slide>
+</ion-slides>
+<ion-list>
+	<ion-list-header>
+		<ion-icon name="paw" item-left ></ion-icon>
+		Dados do Animal
+	</ion-list-header>
+	  <ion-item>
+	  	<div float-left>
+		    <h2>Nome</h2>
+		    <h3>Aquiles</h3>
+	  	</div>
+	    <div float-right text-right>
+	    	<h2>Sexo</h2>
+		    <h3>Masculino</h3>
+	    </div>
+	  </ion-item>
+	  <ion-item>
+	  	<div float-left>
+		    <h2>Raça</h2>
+		    <h3>Labrador</h3>
+	    </div>
+	    <div float-right text-right>
+		    <h2>Idade</h2>
+		    <h3>1 ano</h3>
+	    </div>
+	  </ion-item>
+	  <ion-item>
+	  	<div float-left>
+	  		<h2>Pelagem</h2>
+		    <h3>Marrom curto</h3>
+	    </div>
+	    <div float-right text-right>
+		    <h2>Porte</h2>
+		    <h3>Grande</h3>
+	    </div>
+	  </ion-item>
+  	  <ion-item>
+	    <h2>Deficiências</h2>
+	    <h3>Não possui</h3>
+	  </ion-item>
+	  <ion-item>
+	    <h2>Características</h2>
+	    <h3 text-wrap>
+	    Totalmente Marrom tipo muito marrom mesmo, até as pernas
+	    patas loucuras louco mesmo cara
+	    </h3>
+	  </ion-item>
+</ion-list>
+</ion-content>

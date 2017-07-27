@@ -1,11 +1,26 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>
-      About
+      Caixas de doação
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-
+<ion-fab bottom right *ngIf="this.auth.isAuthenticated()">
+    <button ion-fab (click)="solicitar()" color="secondary"><ion-icon name="add"></ion-icon></button>
+</ion-fab>
+<ion-list>
+  <button ion-button block (click)="doar()">
+    Doar
+  </button>
+  <ion-list-header text-wrap>
+    Você pode doar para a ONG aqui:
+  </ion-list-header>
+  <ion-item *ngFor="let item of caixas" text-wrap>
+    <ion-icon item-left name="pin" color="secondary"></ion-icon>
+    <h2>{{item.empresa}}</h2>
+    <p>{{item.responsavel}}</p>
+  </ion-item>
+</ion-list>
 </ion-content>
