@@ -17,9 +17,9 @@
 </ion-header>
 
 <ion-content>
-  <div *ngFor="let t of teste | async">
+  <!-- <div *ngFor="let t of teste | async">
     {{t | json}}
-  </div>
+  </div> -->
   <div [ngSwitch]="especie">
     <ion-list *ngSwitchCase="'cachorros'">
       <ion-item *ngFor="let animal of animais">

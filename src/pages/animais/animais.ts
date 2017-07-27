@@ -11,7 +11,7 @@ import {Observable} from 'rxjs/Observable';
 export class AnimaisPage {
 
   private especie = "cachorros";
-  private teste = {};
+  // private teste = {};
 
   private animais:Animal[] = [
   	new Animal("Cachorro #1", "male", "Preta",
@@ -22,9 +22,16 @@ export class AnimaisPage {
   		"https://www.cesarsway.com/sites/newcesarsway/files/styles/large_article_preview/public/How%20to%20calm%20a%20hyper%20dog.jpg?itok=Vg7ueySi")
   ];
   constructor(public navCtrl: NavController, public ap: AnimalProvider) {
-    this.teste = ap.retrieveAll().subscribe();
-    alert(this.teste);
+    this.list();
   }
+
+list(){
+  this.ap.retrieveAll().subscribe((res)=>{
+    alert(res);
+  },(error)=>{
+    alert(error);
+  });
+}
 
 adotar(){
   this.navCtrl.push("AnimalPage")
