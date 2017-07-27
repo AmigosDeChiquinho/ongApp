@@ -3,6 +3,8 @@ import { NavController } from 'ionic-angular';
 import { CaixaDoacao } from '../../models/caixaDoacao';
 import { CaixaProvider } from '../../providers/caixa/caixa';
 import { ToastController } from 'ionic-angular';
+import { Auth, User } from '@ionic/cloud-angular';
+
 
 @Component({
   selector: 'page-doacao',
@@ -10,10 +12,10 @@ import { ToastController } from 'ionic-angular';
 })
 export class DoacaoPage {
 
-	caixas: CaixaDoacao[] = []; 
+	caixas: CaixaDoacao[] = [];
 
   constructor(public navCtrl: NavController,public cxProvider: CaixaProvider
-  	, public toastCtrl: ToastController) {
+  	, public toastCtrl: ToastController, public auth: Auth) {
   	this.cxProvider.retrieveAll().subscribe(
   		(res)=>{this.caixas = res},
   		(error)=>{
@@ -25,6 +27,10 @@ export class DoacaoPage {
 		    toast.present()
   		}
   		)
+  }
+
+  doar(){
+    this.navCtrl.push("PagamentoPage");
   }
 
   solicitar(){

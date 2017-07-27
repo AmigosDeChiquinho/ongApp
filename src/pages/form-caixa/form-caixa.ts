@@ -21,7 +21,6 @@ export class FormCaixaPage {
 
   private dados: FormGroup;
 
-	caixa:CaixaDoacao = new CaixaDoacao("","");
   constructor(public navCtrl: NavController, public navParams: NavParams,
   	public cxProvider: CaixaProvider, public toastCtrl: ToastController,
     public formBuilder: FormBuilder) {
@@ -37,7 +36,7 @@ export class FormCaixaPage {
   	if(!this.dados.valid){
   		message = "Insira todos os campos";
   	}else{
-  		this.cxProvider.solicitar(this.caixa).subscribe()
+  		this.cxProvider.solicitar(this.dados.value).subscribe()
   		message = "Caixa solicitada";
   	}
     let toast = this.toastCtrl.create({
@@ -45,10 +44,6 @@ export class FormCaixaPage {
           duration: 3000,
           position: "top"
     });
-    toast.present()
-    this.dados['empresa'].value = ''
-    this.dados['responsavel'].value = ''
-    this.dados['contato'].value = ''
   }
 
 

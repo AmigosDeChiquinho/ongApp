@@ -1,5 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
+import { Auth, User, DetailedError } from '@ionic/cloud-angular';
+
 @IonicPage()
 @Component({
   selector: 'page-animal',
@@ -21,9 +23,10 @@ export class AnimalPage {
     }
   ];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams
+  ,public auth: Auth) {
   }
-  
+
 
 
   adotar(){
