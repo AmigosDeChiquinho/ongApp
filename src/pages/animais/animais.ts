@@ -49,8 +49,8 @@ list(){
   });
 }
 
-adotar(){
-  this.navCtrl.push("AnimalPage")
+adotar(params){
+  this.navCtrl.push("AnimalPage", {id:params});
 }
 
 }

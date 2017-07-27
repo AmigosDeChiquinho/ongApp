@@ -41,27 +41,26 @@
 	  <ion-item>
 	  	<div float-left>
 		    <h2>Nome</h2>
-		    <h3>Aquiles</h3>
+		    <h3>{{animal.nome}}</h3>
 	  	</div>
 	    <div float-right text-right>
-	    	<h2>Sexo</h2>
-		    <h3>Masculino</h3>
+	    	<ion-icon [name]="animal.sexo" [ngClass]="animal.sexo" item-left small></ion-icon>
 	    </div>
 	  </ion-item>
 	  <ion-item>
 	  	<div float-left>
-		    <h2>Raça</h2>
-		    <h3>Labrador</h3>
+        <h2>Idade</h2>
+		    <h3>{{animal.idade}} anos</h3>
 	    </div>
 	    <div float-right text-right>
-		    <h2>Idade</h2>
-		    <h3>1 ano</h3>
+        <h2>Pelo</h2>
+		    <h3>{{animal.pelagem}}</h3>
 	    </div>
 	  </ion-item>
 	  <ion-item>
 	  	<div float-left>
-	  		<h2>Pelagem</h2>
-		    <h3>Marrom curto</h3>
+	  		<h2>Porte</h2>
+		    <h3>{{animal.porte}}</h3>
 	    </div>
 	    <div float-right text-right>
 		    <h2>Porte</h2>
@@ -69,14 +68,13 @@
 	    </div>
 	  </ion-item>
   	  <ion-item>
-	    <h2>Deficiências</h2>
-	    <h3>Não possui</h3>
+	    <h2>Caracteristicas</h2>
+	    <h3>{{animal.caracteristicas}}</h3>
 	  </ion-item>
 	  <ion-item>
-	    <h2>Características</h2>
+	    <h2>Breve Histórico</h2>
 	    <h3 text-wrap>
-	    Totalmente Marrom tipo muito marrom mesmo, até as pernas
-	    patas loucuras louco mesmo cara
+	    {{animal.breveHistorico}}
 	    </h3>
 	  </ion-item>
 </ion-list>

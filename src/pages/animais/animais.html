@@ -5,7 +5,7 @@
     </ion-title>
   </ion-navbar>
   <ion-toolbar no-border-top color="primary">
-    <ion-segment [(ngModel)]="especie" color="light">
+    <ion-segment [(ngModel)]="especie" color="base">
       <ion-segment-button value="cachorros">
         Cachorros
       </ion-segment-button>
@@ -30,7 +30,7 @@
                 </ion-card-title>
               </ion-item>
             </ion-card-content>
-            <img src="https://s-media-cache-ak0.pinimg.com/736x/63/0f/0e/630f0ef3f6f3126ca11f19f4a9b85243.jpg">
+            <img src="http://tudosobrecachorros.com.br/wp-content/uploads/o-que-fazer-se-encontrar-um-cachorro-na-rua.jpg">
             <ion-card-content>
               <p>
                 {{animais[k].descricao}}
@@ -38,7 +38,7 @@
             </ion-card-content>
             <ion-row no-padding>
               <ion-col>
-                <button ion-button clear small color="danger" icon-left (click)="adotar()">
+                <button ion-button clear small color="danger" icon-left (click)="adotar(animais[k].idanimal)">
                   <ion-icon name='information-circle'></ion-icon>
                   Detalhes
                 </button>
@@ -66,7 +66,7 @@
                 </ion-card-title>
               </ion-item>
             </ion-card-content>
-            <img src="https://s-media-cache-ak0.pinimg.com/736x/63/0f/0e/630f0ef3f6f3126ca11f19f4a9b85243.jpg">
+            <img src="http://image.cachorrogato.com.br/textimages/ieska/0%20CATS/gato-de-rua-quatro.jpg">
             <ion-card-content>
               <p>
                 {{animais[k].descricao}}
@@ -74,7 +74,7 @@
             </ion-card-content>
             <ion-row no-padding>
               <ion-col>
-                <button ion-button clear small color="danger" icon-left (click)="adotar()">
+                <button ion-button clear small color="danger" icon-left (click)="adotar(animais[k].idanimal)">
                   <ion-icon name='information-circle'></ion-icon>
                   Detalhes
                 </button>

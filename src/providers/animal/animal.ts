@@ -15,7 +15,13 @@ export class AnimalProvider {
   constructor(public http: Http) {}
 
   retrieveAll(){
-    return this.http.get(this.server);
+    return this.http.get(this.server+"?arquivado=0&Profile_idProfile=null");
   }
 
+  findOne(id){
+    return this.http.get(this.server+"?idanimal="+id);
   }
+
+
+
+}
