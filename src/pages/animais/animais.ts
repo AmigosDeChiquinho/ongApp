@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Animal } from '../../models/animal';
 import { AnimalProvider } from '../../providers/animal/animal';
+import {Observable} from 'rxjs/Observable';
 @Component({
   selector: 'page-animais',
   templateUrl: 'animais.html',
@@ -22,6 +23,7 @@ export class AnimaisPage {
   ];
   constructor(public navCtrl: NavController, public ap: AnimalProvider) {
     this.teste = ap.retrieveAll().subscribe();
+    alert(this.teste);
   }
 
 adotar(){
