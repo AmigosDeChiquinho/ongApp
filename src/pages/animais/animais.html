@@ -17,66 +17,77 @@
 </ion-header>
 
 <ion-content>
-  <!-- <div *ngFor="let t of teste | async">
-    {{t | json}}
-  </div> -->
-  <div [ngSwitch]="especie">
+<div [ngSwitch]="especie">
     <ion-list *ngSwitchCase="'cachorros'">
-      <ion-item *ngFor="let animal of animais">
-        <ion-card>
-          <ion-card-content>
-            <ion-item>
-            <ion-icon [name]="animal.sexo" [ngClass]="animal.sexo" item-left large></ion-icon>
-            <ion-card-title text-wrap>
-              {{animal.nome}}
-              </ion-card-title>
-            </ion-item>
-          </ion-card-content>
-          <virtual-ion-img [src]="animal.imagem"></virtual-ion-img>
-          <ion-card-content>
-            <p>
-              {{animal.descricao}}
-            </p>
-          </ion-card-content>
-          <ion-row no-padding>
-            <ion-col>
-              <button ion-button clear small color="danger" icon-left (click)="adotar()">
-                <ion-icon name='information-circle'></ion-icon>
-                Detalhes
-              </button>
-            </ion-col>
-          </ion-row>
-        </ion-card>
-      </ion-item>
+      <div *ngIf="cachorros.length > 0; else defaultCachorro">
+        <ion-item *ngFor="let k of cachorros">
+          <ion-card>
+            <ion-card-content>
+              <ion-item>
+              <ion-icon [name]="animais[k].sexo" [ngClass]="animais[k].sexo" item-left large></ion-icon>
+              <ion-card-title text-wrap>
+                {{animais[k].nome}}
+                </ion-card-title>
+              </ion-item>
+            </ion-card-content>
+            <img src="https://s-media-cache-ak0.pinimg.com/736x/63/0f/0e/630f0ef3f6f3126ca11f19f4a9b85243.jpg">
+            <ion-card-content>
+              <p>
+                {{animais[k].descricao}}
+              </p>
+            </ion-card-content>
+            <ion-row no-padding>
+              <ion-col>
+                <button ion-button clear small color="danger" icon-left (click)="adotar()">
+                  <ion-icon name='information-circle'></ion-icon>
+                  Detalhes
+                </button>
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </ion-item>
+      </div>
+      <ng-template #defaultCachorro>
+        <div padding>
+          <h3 text-center>Infelizmente não temos cachorrinhos para adoção :(</h3>
+        </div>
+      </ng-template>
     </ion-list>
 
     <ion-list *ngSwitchCase="'gatos'">
-      <ion-item *ngFor="let animal of animais">
-        <ion-card>
-          <ion-card-content>
-            <ion-item>
-            <ion-icon [name]="animal.sexo" [ngClass]="animal.sexo" item-left large></ion-icon>
-            <ion-card-title text-wrap>
-              {{animal.nome}}
-              </ion-card-title>
-            </ion-item>
-          </ion-card-content>
-          <virtual-ion-img [src]="animal.imagem"></virtual-ion-img>
-          <ion-card-content>
-            <p>
-              {{animal.descricao}}
-            </p>
-          </ion-card-content>
-          <ion-row no-padding>
-            <ion-col>
-              <button ion-button clear small color="danger" icon-left (click)="adotar()">
-                <ion-icon name='information-circle'></ion-icon>
-                Detalhes
-              </button>
-            </ion-col>
-          </ion-row>
-        </ion-card>
-      </ion-item>
+      <div *ngIf="gatos.length > 0; else defaultGato">
+        <ion-item *ngFor="let k of gatos">
+          <ion-card>
+            <ion-card-content>
+              <ion-item>
+              <ion-icon [name]="animais[k].sexo" [ngClass]="animais[k].sexo" item-left large></ion-icon>
+              <ion-card-title text-wrap>
+                {{animais[k].nome}}
+                </ion-card-title>
+              </ion-item>
+            </ion-card-content>
+            <img src="https://s-media-cache-ak0.pinimg.com/736x/63/0f/0e/630f0ef3f6f3126ca11f19f4a9b85243.jpg">
+            <ion-card-content>
+              <p>
+                {{animais[k].descricao}}
+              </p>
+            </ion-card-content>
+            <ion-row no-padding>
+              <ion-col>
+                <button ion-button clear small color="danger" icon-left (click)="adotar()">
+                  <ion-icon name='information-circle'></ion-icon>
+                  Detalhes
+                </button>
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </ion-item>
+      </div>
+      <ng-template #defaultGato>
+        <div padding>
+          <h3 text-center color="primary">infelizmente não temos gatinhos para adoção :(</h3>
+        </div>
+      </ng-template>
     </ion-list>
-  </div>
+</div>
 </ion-content>
